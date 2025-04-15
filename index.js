@@ -8,6 +8,7 @@ import ListenerRoutes from "./src/routes/ListenerRoutes.js";
 /* Variáveis de Ambiente */
 dotenv.config();
 console.log("TESTE")
+console.log("Teste PIPELINE")
 //Configuração Express
 const app = express();
 app.use(express.urlencoded({ extended: false }));
