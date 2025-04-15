@@ -49,7 +49,7 @@ jobs:
       - name: Run Docker Compose
         run: |
           docker compose up --build -d
-          sleep 30 # Aguarda o banco de dados iniciar
+          sleep 20 # Aguarda o banco de dados iniciar
           # Verifica se o container está rodando
           if ! docker compose ps | grep backend | grep "Up"; then
             echo "❌ Backend container is not running!"
