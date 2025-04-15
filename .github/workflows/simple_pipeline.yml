@@ -48,7 +48,7 @@ jobs:
 
       - name: Run Docker Compose
         run: |
-          docker-compose up --build -d
+          docker compose up --build -d
           sleep 30 # Aguarda o banco de dados iniciar
           docker-compose logs backend
           docker-compose down -v

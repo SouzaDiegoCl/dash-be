@@ -1,9 +1,6 @@
 import EventoService from "../services/EventoService.js";
-import DashboardInternasService from "../services/DashboardInternaService.js";
 import EventoTipos from "../models/enums/EventoTipos.js";
 import EventoStatus from "../models/enums/EventoStatus.js";
-let a = 10
-let a = 10
 class EventoController {
   async findAll(req, res) {
     try {
