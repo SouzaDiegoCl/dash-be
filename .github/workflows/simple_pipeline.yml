@@ -39,7 +39,7 @@ jobs:
 
       - name: Create .env
         run: |
-          echo "DB_HOST=localhost" >> .env
+          echo "DB_HOST=db" >> .env
           echo "DB_PORT=5432" >> .env
           echo "DB_NAME=test" >> .env
           echo "DB_USERNAME=test" >> .env
@@ -50,5 +50,11 @@ jobs:
         run: |
           docker compose up --build -d
           sleep 30 # Aguarda o banco de dados iniciar
+          # Verifica se o container está rodando
+          if ! docker compose ps | grep backend | grep "Up"; then
+            echo "❌ Backend container is not running!"
+            docker compose logs backend
+            exit 1
+          fi
           docker compose logs backend
           docker compose down -v
