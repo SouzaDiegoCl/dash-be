@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint . || true # Ignora os erros para não travar o PR
+        run: npx eslint . #|| true # Ignora os erros para não travar o PR
 
   build-check:
     runs-on: ubuntu-latest

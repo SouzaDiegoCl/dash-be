@@ -1,4 +1,4 @@
-import DashboardInternasService from "../services/DashboardInternaService.js";
+import DashboardInternasService from "../services/DashboardInternaService";
 class DashBoardInternaController {
   // Serve a rota /v1/dashboard/interna
   async findDashboardInternoGeral(req, res) {
