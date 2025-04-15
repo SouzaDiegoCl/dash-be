@@ -21,8 +21,8 @@ export default defineConfig([
   },  
   {
     rules: {
-      "no-unused-vars": "warn", //VERIFICA VARIÁVEIS NÃO UTILIZADAS
-      "no-undef": "warn", //VERIFICA VARIÁVEIS NÃO DEFINIDAS
+      "no-unused-vars": "error", //VERIFICA VARIÁVEIS NÃO UTILIZADAS
+      "no-undef": "error", //VERIFICA VARIÁVEIS NÃO DEFINIDAS
       "no-console": "off", //PERMITE O USO DO CONSOLE.LOG
       "prefer-const": "warn", //USE CONST AO INVÉS DE LET PARA VARIÁVEIS QUE NÃO SOFREM REATRIBUIÇÃO
       "prefer-template": "warn", //USE TEMPLATE LITERALS `` AO INVÉS DE CONCATENAÇÃO COM + PARA STRINGS
