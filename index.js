@@ -3,11 +3,12 @@ import express from "express";
 import dotenv from "dotenv";
 //Routes
 import DashboardInternaRoutes from "./src/routes/DashBoardInternaRoutes.js";
-import DashboardExternaRoutes from "./src/routes/DashBoardExternaRoutes.js";
+import DashboardExternaRoutes from "./src/routes/DashBoardExternaRoutes";
 import ListenerRoutes from "./src/routes/ListenerRoutes.js"; 
 /* Variáveis de Ambiente */
 dotenv.config();
-console.log("Teste PIPELINE")
+console.log("TESTE")
+
 //Configuração Express
 const app = express();
 app.use(express.urlencoded({ extended: false }));

@@ -1,6 +1,6 @@
 import EventoService from "../services/EventoService.js";
-import DashboardInternasService from "../services/DashboardInternaService.js";
 import EventoTipos from "../models/enums/EventoTipos.js";
+import DashboardInternaController from "./DashboardInternaController.js";
 import EventoStatus from "../models/enums/EventoStatus.js";
 
 class EventoController {
