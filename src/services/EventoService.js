@@ -1,6 +1,6 @@
 import { AppDataSource } from '../config/data-source.js';
 const repository = AppDataSource.getRepository('Evento');
-
+var a;
 class EventoService {
   async findAll() {
     console.log(`Buscando Todos os Eventos...`);

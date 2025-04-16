@@ -6,6 +6,8 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - '**/*.js'  # Só roda se arquivos .js forem modificados
 
 jobs:
   eslint:
@@ -23,8 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint
-        run: npx eslint .
+      - name: ESLint changed files
+        uses: tj-actions/eslint-changed-files@v25.3.1
+        with:
+          config_path: "eslint.config.js"
+          extra_args: "--max-warnings=2"      
 
   build:
     runs-on: ubuntu-latest
@@ -55,6 +60,9 @@ jobs:
             echo "❌ Backend container is not running!"
             docker compose logs backend
             exit 1
-          fi
-          docker compose logs backend
+          else
+            echo "✅ Backend container is running!"
+            docker compose logs backend            
+          fi                      
           docker compose down -v
+          
