@@ -1,36 +1,45 @@
-import { EntitySchema } from "typeorm";
+import {EntitySchema} from 'typeorm';
 
 const Aluno = new EntitySchema({
-  name: "Aluno",
-  tableName: "Aluno",
+  name: 'Aluno',
+  tableName: 'Alunos',
   columns: {
     id_aluno: {
       primary: true,
-      type: "int",
-      generated: "increment",
+      type: 'int',
+      generated: 'increment',
     },
     foto_url: {
-      type: "text",
+      type: 'text',
       nullable: true,
     },
-    data_ingresso: {
-      type: "timestamp",
+    data_matricula: {
+      type: 'timestamp',
       nullable: true,
     },
-    data_criacao: {
-      type: "timestamp", 
-      default: () => "CURRENT_TIMESTAMP",
-    },
-    data_alteracao: {
-      type: "timestamp",
-      default: () => "CURRENT_TIMESTAMP", 
+    deseja_ser_candidato: {
+      type: 'boolean',
+      default: false,
     },
     curso_semestre: {
-      type: "text",
+      type: 'text',
       nullable: true,
     },
+    ra: {
+      type: 'int',
+      unique: true,
+    },
+    data_criacao: {
+      type: 'timestamp',
+      default: () => 'CURRENT_TIMESTAMP',
+    },
+    data_alteracao: {
+      type: 'timestamp',
+      default: () => 'CURRENT_TIMESTAMP',
+    },
+
     fk_id_usuario: {
-      type: "int",
+      type: 'int',
       nullable: false,
     },
   },
